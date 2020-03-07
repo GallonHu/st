@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Source Code Pro:pixelsize=18:antialias=true:autohint=true";
+static char *font = "SauceCodePro Nerd Font:pixelsize=22:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -176,8 +176,8 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
-#define TERMMOD (ControlMask|ShiftMask)
+#define MODKEY Mod4Mask
+#define TERMMOD ControlMask
 
 // from @LukeSmithxyz
 static char *openurlcmd[] = { "/bin/sh", "-c",
@@ -197,18 +197,18 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	// { MODKEY,               XK_,           zoom,           {.f = +1} },
+	// { MODKEY,               XK_,           zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ControlMask,          XK_k,			kscrollup,      {.i =  1} },
-	{ ControlMask,          XK_j,			kscrolldown,    {.i =  1} },
-	{ ControlMask|MODKEY,   XK_k,			kscrollup,      {.i = -1} },
-	{ ControlMask|MODKEY,   XK_j,			kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
+	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
+	// { TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+	// { ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
+	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i = 0} },
+	{ ControlMask,          XK_k,           kscrollup,      {.i = 1} },
+	{ ControlMask,          XK_j,           kscrolldown,    {.i = 1} },
+	{ ControlMask|ShiftMask,   XK_k,           kscrollup,      {.i = 3} },
+	{ ControlMask|ShiftMask,   XK_j,           kscrolldown,    {.i = 3} },
 	{ MODKEY,               XK_l,           copyurl,        {.i =  0} },
 };
 
