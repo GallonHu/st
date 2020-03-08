@@ -4,3 +4,4 @@ st
 *.rej
 *.diff
 
+.ccls-cache/
